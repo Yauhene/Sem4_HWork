@@ -1,4 +1,4 @@
-﻿// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+﻿// Задача 29: Напишите программу, которая задаёт массив из 8 целочисленных элементов и выводит их на экран.
 
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
@@ -26,7 +26,8 @@ int[] createArr(int size)
     return arr;
 }
 
-int IntInput(string intName) // функция принимает число из консоли, преобразуя его в целое
+int IntInput(string intName) // функция принимает целое число из консоли, преобразуя его в целое
+                            // зело ругаеццо при косячном вводе
 {
     int num;
 
@@ -50,17 +51,22 @@ void printArr(int[] array)
         }
         else str = str  + array[i] + ".";
     }
-    Console.Write(str);
+    Console.WriteLine(str);
 }
 
 
 Console.WriteLine();
 Console.WriteLine();
+Console.WriteLine("Заполнение нового массива случайными числами:");
+int[] myArr = createRandArr(5, 0, 99); //заполнение случайными числами от 0 до 100 массива размерностью 5
+printArr(myArr);
 
-//int[] myArr = createRandArr(5, 0, 99); //заполнение случайными числами от 0 до 100 массива размерностью 5
-int[] myArrManual = createArr(5);
+Console.WriteLine("-------------------------------------------------------------");
 Console.WriteLine();
-//printArr(myArr);
+Console.WriteLine("Заполнение нового массива вручную:");
+int[] myArrManual = createArr(5); //заполнение пользовательскими числами  массива размерностью 5
 printArr(myArrManual);
 
-//Console.WriteLine("Hello, World!");
+
+
+
